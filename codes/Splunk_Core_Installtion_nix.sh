@@ -1,6 +1,6 @@
 
 #!/bin/bash 
-                                                    Version_1.0.0 by BK
+                                                    #Version_1.0.0 by BK
 
 # CentOS/RedHat installation Script - Splunk Core
 
@@ -28,9 +28,31 @@ sudo /opt/splunk/bin/splunk start --accept-license
 
 sudo /opt/splunk/bin/splunk stop
 
+echo ""
+
+    sleep 5
+
+echo "Stopping Splunk to set boot start
+
+
+"
+
 sudo /opt/splunk/bin/splunk enable boot-start -user splunk
 
 sudo chown  -R splunk: /opt/splunk
 
 sudo -H -u splunk /opt/splunk/bin/splunk start
 
+echo ""
+
+    sleep 5
+
+echo "Starting Splunk from Splunk user
+
+
+
+"
+e=`/opt/splunk/bin/splunk version`
+echo "Splunk New Version $e"
+
+sudo -H -u splunk /opt/splunk/bin/splunk status
