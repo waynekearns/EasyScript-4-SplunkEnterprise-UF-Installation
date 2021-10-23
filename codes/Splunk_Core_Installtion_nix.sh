@@ -53,4 +53,9 @@ echo "Starting Splunk from Splunk user
 
 sudo -H -u splunk /opt/splunk/bin/splunk start
 
+echo ""
+
+echo "Splunkd running Confirmation check
+"
+
 sudo -H -u splunk /opt/splunk/bin/splunk status
