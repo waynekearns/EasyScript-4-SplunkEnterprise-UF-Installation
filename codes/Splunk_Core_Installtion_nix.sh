@@ -18,7 +18,7 @@ bk=`cat ~/output.txt |grep -i "already installed" |grep -o "Git is already insta
 
 sudo wget -O splunk-8.2.2.1-ae6821b7c64b-linux-2.6-x86_64.rpm 'https://download.splunk.com/products/splunk/releases/8.2.2.1/linux/splunk-8.2.2.1-ae6821b7c64b-linux-2.6-x86_64.rpm'
 
-mv splunk-8.2.2.1-ae6821b7c64b-linux-2.6-x86_64.rpm /opt/
+sudo mv splunk-8.2.2.1-ae6821b7c64b-linux-2.6-x86_64.rpm /opt/
 
 cd /opt/
 
