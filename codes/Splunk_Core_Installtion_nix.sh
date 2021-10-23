@@ -41,8 +41,6 @@ sudo /opt/splunk/bin/splunk enable boot-start -user splunk
 
 sudo chown  -R splunk: /opt/splunk
 
-sudo -H -u splunk /opt/splunk/bin/splunk start
-
 echo ""
 
     sleep 5
@@ -52,5 +50,7 @@ echo "Starting Splunk from Splunk user
 
 
 "
+
+sudo -H -u splunk /opt/splunk/bin/splunk start
 
 sudo -H -u splunk /opt/splunk/bin/splunk status
