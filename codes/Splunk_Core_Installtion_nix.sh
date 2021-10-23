@@ -16,14 +16,13 @@ bk=`cat ~/output.txt |grep -i "already installed" |grep -o "wget is already inst
 
                            fi
 
-sudo wget -O splunk-8.2.2.1-ae6821b7c64b-linux-2.6-x86_64.rpm 'https://download.splunk.com/products/splunk/releases/8.2.2.1/linux/splunk-8.2.2.1-ae6821b7c64b-linux-2.6-x86_64.rpm'
-
-sudo mv splunk-8.2.2.1-ae6821b7c64b-linux-2.6-x86_64.rpm /opt/
+sudo wget -O splunk-8.2.2.1-ae6821b7c64b-linux-2.6-x86_64.rpm 'https://download.splunk.com/products/splunk/releases/8.2.2.1/linux/splunk-8.2.2.1-ae6821b7c64b-linux-2.6-x86_64.rpm' /opt
 
 sudo rpm -i /opt/splunk-8.2.2.1-ae6821b7c64b-linux-2.6-x86_64.rpm
 
-sudo -u splunk /opt/splunk/bin/splunk start --accept-license --answer-yes &>/dev/null
+sudo /opt/splunk/bin/splunk start --accept-license
 
+sudo /opt/splunk/bin/splunk stop
 
 echo ""
 
@@ -32,24 +31,20 @@ echo ""
 echo "Stopping Splunk to set boot start
 
 
-
-
 "
+sudo /opt/splunk/bin/splunk enable boot-start -user splunk
 
-
-sudo -u splunk /opt/splunk/bin/splunk stop &>/dev/null
+sudo chown  -R splunk: /opt/splunk
 
 sleep 10
 
-sudo -u root /opt/splunk/bin/splunk enable boot-start -systemd-managed 0 -user splunk
-
-sudo -u splunk /opt/splunk/bin/splunk start &>/dev/null
+sudo -H -u splunk /opt/splunk/bin/splunk start
 
 echo ""
 
     sleep 5
 
-echo "Restarting Splunk
+echo "Starting Splunk from Splunk user.
 
 
 
@@ -59,6 +54,6 @@ echo "Restarting Splunk
 e=`/opt/splunk/bin/splunk version`
 echo "Splunk New Version $e"
 
-sudo -u splunk /opt/splunk/bin/splunk status &>/dev/null
+sudo -H -u splunk /opt/splunk/bin/splunk status
 
 
