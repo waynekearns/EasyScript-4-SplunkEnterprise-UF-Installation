@@ -52,7 +52,5 @@ echo "Starting Splunk from Splunk user
 
 
 "
-e=`/opt/splunk/bin/splunk version`
-echo "Splunk New Version $e"
 
 sudo -H -u splunk /opt/splunk/bin/splunk status
