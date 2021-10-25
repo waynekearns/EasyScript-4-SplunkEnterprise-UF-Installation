@@ -49,24 +49,17 @@ bk=`cat ~/output.txt |grep -i "already installed" |grep -o "Git is already insta
                            
                            fi
    ' 
-   ###############
-   #core apps/ta installation 
-   #this section varies one client to another one depending in what we want to install on thier HF
+  #core apps/ta installation 
+  #this section varies one client to another one depending in what we want to install on thier HF
 	
 sudo git clone https://github.com/SplunkAutobahnConsultants/Splunk-Core-Apps-Repo.git /opt/splunk-apps
 
-cd /opt/splunk-apps/apps
 
-sudo tar -xvzf Splunk_TA_windows.tar.gz  -C /opt/splunk/etc/apps
+sudo /opt/splunk/bin/splunk install app /opt/splunk-apps/apps/Splunk_TA_windows.tar.gz
 
-sudo tar -xvzf _all_heavy_forwarder_base.tar.gz  -C /opt/splunk/etc/apps
+sudo /opt/splunk/bin/splunk install app /opt/splunk-apps/apps/_all_heavy_forwarder_base.tar.gz
 
-sudo tar -xvzf palo-alto-networks-add-on-for-splunk_703.tgz  -C /opt/splunk/etc/apps 
-
-sudo rm -r /opt/splunk-apps
-
-  ######
-  ######
+sudo /opt/splunk/bin/splunk install app /opt/splunk-apps/apps/palo-alto-networks-add-on-for-splunk_703.tgz
   
 
 sudo /opt/splunk/bin/splunk stop
