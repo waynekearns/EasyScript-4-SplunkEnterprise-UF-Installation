@@ -113,3 +113,5 @@ echo ""
 echo "${yellow}Splunkd running Confirmation check${reset}"
 
 sudo -H -u splunk /opt/splunk/bin/splunk status
+
+echo "${green}Splunk has been sucessfully installed, Happy Splunking!!! ${yellow}:-) ${reset}"
