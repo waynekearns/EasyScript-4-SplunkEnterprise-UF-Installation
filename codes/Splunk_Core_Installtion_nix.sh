@@ -1,5 +1,5 @@
 #!/bin/bash
-                                                               #Version_1.0.0 by BK
+                                                               #Version_1.0.0 by Bisrat Kebede, BK
 
 #setting up colors
 red=`tput setaf 1`
