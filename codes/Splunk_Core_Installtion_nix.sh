@@ -18,7 +18,7 @@ sudo mv splunk-8.2.2.1-ae6821b7c64b-linux-2.6-x86_64.rpm /opt/
 
 cd /opt/
 
-rpm -i splunk-8.2.2.1-ae6821b7c64b-linux-2.6-x86_64.rpm
+sudo rpm -i splunk-8.2.2.1-ae6821b7c64b-linux-2.6-x86_64.rpm
 
 
  #Ubuntu installation Script - Splunk Core
