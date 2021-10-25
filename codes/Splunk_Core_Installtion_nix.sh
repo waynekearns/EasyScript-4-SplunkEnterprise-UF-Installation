@@ -72,8 +72,10 @@ sudo /opt/splunk/bin/splunk install app /opt/splunk-apps/apps/Splunk_TA_windows.
 sudo /opt/splunk/bin/splunk install app /opt/splunk-apps/apps/_all_heavy_forwarder_base.tar.gz
 
 sudo /opt/splunk/bin/splunk install app /opt/splunk-apps/apps/palo-alto-networks-add-on-for-splunk_703.tgz
-  
 
+sudo rm -r /opt/splunk-apps
+
+  
 sudo /opt/splunk/bin/splunk stop
 
 echo ""
