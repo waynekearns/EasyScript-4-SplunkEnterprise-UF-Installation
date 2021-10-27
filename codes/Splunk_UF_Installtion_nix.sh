@@ -71,7 +71,7 @@ bk=`cat ~/output.txt |grep -i "already installed" |grep -o "Git is already insta
 
 sudo git clone https://github.com/SplunkAutobahnConsultants/Splunk-Core-Apps-Repo.git /opt/splunk-apps
 
-sudo /opt/splunkforwarder/bin/splunk install app /opt/splunk-apps/apps/Splunk_TA_windows.tar.gz
+sudo /opt/splunkforwarder/bin/splunk install app /opt/splunk-apps/apps/deploy-client-uf.tar.gz
 
 sudo rm -r /opt/splunk-apps
 
