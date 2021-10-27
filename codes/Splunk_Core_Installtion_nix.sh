@@ -85,6 +85,16 @@ sudo /opt/splunk/bin/splunk install app /opt/splunk-apps/apps/palo-alto-networks
 sudo rm -r /opt/splunk-apps
 
 
+#DS Section
+#Cloning DS folder from SplunkAutobahnConsultants repo
+sudo git clone https://github.com/SplunkAutobahnConsultants/DS-Automation.git /opt/Splunk-DS-Automation
+
+sudo chmod +x /opt/Splunk-DS-Automation/codes/automationScript_HF.sh
+cd /opt/Splunk-DS-Automation/codes/
+sudo ./automationScript_HF.sh
+
+
+
 sudo /opt/splunk/bin/splunk stop
 
 echo ""
