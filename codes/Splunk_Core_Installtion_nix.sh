@@ -13,22 +13,16 @@ echo "${green}Splunk Autobahn Delivery Engineering Team${reset}"
 
 # CentOS/RedHat installation Script - Splunk Core
 sudo wget -O splunk-8.2.2.1-ae6821b7c64b-linux-2.6-x86_64.rpm 'https://download.splunk.com/products/splunk/releases/8.2.2.1/linux/splunk-8.2.2.1-ae6821b7c64b-linux-2.6-x86_64.rpm'
-
 sudo mv splunk-8.2.2.1-ae6821b7c64b-linux-2.6-x86_64.rpm /opt/
-
 cd /opt/
-
 sudo rpm -i splunk-8.2.2.1-ae6821b7c64b-linux-2.6-x86_64.rpm
 
 
  #Ubuntu installation Script - Splunk Core
 : '
 sudo wget -O splunk-8.2.2.1-ae6821b7c64b-linux-2.6-amd64.deb 'https://download.splunk.com/products/splunk/releases/8.2.2.1/linux/splunk-8.2.2.1-ae6821b7c64b-linux-2.6-amd64.deb'
-
 sudo mv splunk-8.2.2.1-ae6821b7c64b-linux-2.6-amd64.deb /opt/
-
 cd /opt/
-
 dpkg -i splunk-8.2.2.1-ae6821b7c64b-linux-2.6-amd64.deb
 
    '
@@ -42,6 +36,7 @@ echo ""
 echo "${yellow}Checks if git is installed${reset}"
 
 echo ""
+
 
 #git install on centOS
 #comment down below if your machine is running ubuntu linux
@@ -75,20 +70,16 @@ bk=`cat ~/output.txt |grep -i "already installed" |grep -o "Git is already insta
   #this section varies one client to another one depending in what we want to install on thier HF
 
 sudo git clone https://github.com/SplunkAutobahnConsultants/Splunk-Core-Apps-Repo.git /opt/splunk-apps
-
 sudo /opt/splunk/bin/splunk install app /opt/splunk-apps/apps/Splunk_TA_windows.tar.gz
-
 sudo /opt/splunk/bin/splunk install app /opt/splunk-apps/apps/_all_heavy_forwarder_base.tar.gz
-
 sudo /opt/splunk/bin/splunk install app /opt/splunk-apps/apps/palo-alto-networks-add-on-for-splunk_703.tgz
-
 sudo rm -r /opt/splunk-apps
+
 
 
 #DS Section
 #Cloning DS folder from SplunkAutobahnConsultants repo
 sudo git clone https://github.com/SplunkAutobahnConsultants/DS-Automation.git /opt/Splunk-DS-Automation
-
 sudo chmod +x /opt/Splunk-DS-Automation/codes/automationScript_HF.sh
 cd /opt/Splunk-DS-Automation/codes/
 sudo ./automationScript_HF.sh
@@ -105,7 +96,6 @@ echo "${yellow}Stopping Splunk to set boot start${reset}
 "
 
 sudo /opt/splunk/bin/splunk enable boot-start -user splunk
-
 sudo chown  -R splunk: /opt/splunk
 
 echo ""
