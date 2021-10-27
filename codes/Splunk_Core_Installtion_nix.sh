@@ -66,9 +66,9 @@ bk=`cat ~/output.txt |grep -i "already installed" |grep -o "Git is already insta
 
                            fi
    '
+   
   #core apps/ta installation
   #this section varies one client to another one depending in what we want to install on thier HF
-
 sudo git clone https://github.com/SplunkAutobahnConsultants/Splunk-Core-Apps-Repo.git /opt/splunk-apps
 sudo /opt/splunk/bin/splunk install app /opt/splunk-apps/apps/Splunk_TA_windows.tar.gz
 sudo /opt/splunk/bin/splunk install app /opt/splunk-apps/apps/_all_heavy_forwarder_base.tar.gz
@@ -77,8 +77,8 @@ sudo rm -r /opt/splunk-apps
 
 
 
-#DS Section
-#Cloning DS folder from SplunkAutobahnConsultants repo
+  #DS Section
+  #Cloning DS folder from SplunkAutobahnConsultants repo
 sudo git clone https://github.com/SplunkAutobahnConsultants/DS-Automation.git /opt/Splunk-DS-Automation
 sudo chmod +x /opt/Splunk-DS-Automation/codes/automationScript_HF.sh
 cd /opt/Splunk-DS-Automation/codes/
