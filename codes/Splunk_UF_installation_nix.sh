@@ -69,7 +69,7 @@ bk=`cat ~/output.txt |grep -i "already installed" |grep -o "Git is already insta
 
   #this section handles DS Config App for DS - Splunk HF Configuration
 
-sudo git clone https://github.com/SplunkAutobahnConsultants/Splunk-Core-Apps-Repo.git /opt/splunk-apps
+sudo git clone https://github.com/SplunkAutobahnConsultants/DS-Automation.git /opt/splunk-apps
 cd /opt/splunk-apps/UF/Linux/DS-Config/
 sudo mv deploy-client-uf/ /opt/splunkforwarder/etc/apps/
 sudo rm -r /opt/splunk-apps
