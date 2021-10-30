@@ -112,4 +112,4 @@ sudo -H -u splunk /opt/splunk/bin/splunk status
 
 echo "${green}Splunk has been sucessfully installed, Happy Splunking!!! ${green}BK${reset}"
 
-#BisratKebede
+#BisratKebede 
