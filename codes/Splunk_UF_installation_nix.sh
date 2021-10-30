@@ -7,7 +7,7 @@ green=`tput setaf 2`
 yellow=`tput setaf 3`
 reset=`tput sgr0`
 
-echo "${green}Splunk UF Install Automation${reset}"
+echo "${green}Splunk UF Install Automation with DS Configs${reset}"
 echo "${green}Splunk Inc. 2021${reset}"
 echo "${green}Splunk Autobahn Delivery Engineering Team${reset}"
 
