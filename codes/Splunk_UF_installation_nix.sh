@@ -31,9 +31,6 @@ dpkg -i splunkforwarder-8.2.2.1-ae6821b7c64b-linux-2.6-amd64.deb
 
 sudo /opt/splunkforwarder/bin/splunk start --accept-license
 
-sudo /opt/splunkforwarder/bin/splunk stop
-
-
 
 echo ""
 
@@ -75,6 +72,7 @@ sudo mv deploy-client-uf/ /opt/splunkforwarder/etc/apps/
 sudo rm -r /opt/splunk-apps
 
 
+sudo /opt/splunkforwarder/bin/splunk stop
 
 
 echo ""
