@@ -69,7 +69,7 @@ bk=`cat ~/output.txt |grep -i "already installed" |grep -o "Git is already insta
 sudo git clone https://github.com/SplunkAutobahnConsultants/DS-Automation.git /opt/splunk-apps
 cd /opt/splunk-apps/UF/Linux/DS-Config/
 sudo mv deploy-client-uf/ /opt/splunkforwarder/etc/apps/
-sudo rm -r /opt/splunk-apps
+
 
 
 sudo /opt/splunkforwarder/bin/splunk stop
@@ -100,5 +100,7 @@ echo ""
 echo "${yellow}Splunkd running Confirmation check${reset}"
 
 sudo -H -u splunk /opt/splunkforwarder/bin/splunk status
+
+sudo rm -r /opt/splunk-apps
 
 echo "${green}Splunk UF has been sucessfully installed, Happy Splunking!!! ${yellow}:-) ${reset}"
