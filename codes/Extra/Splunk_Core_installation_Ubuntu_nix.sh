@@ -19,7 +19,7 @@ echo "${green}Splunk Autobahn Delivery Engineering Team${reset}"
 sudo wget -O splunk-8.2.2.1-ae6821b7c64b-linux-2.6-amd64.deb 'https://download.splunk.com/products/splunk/releases/8.2.2.1/linux/splunk-8.2.2.1-ae6821b7c64b-linux-2.6-amd64.deb'
 sudo mv splunk-8.2.2.1-ae6821b7c64b-linux-2.6-amd64.deb /opt/
 cd /opt/
-dpkg -i splunk-8.2.2.1-ae6821b7c64b-linux-2.6-amd64.deb
+sudo dpkg -i splunk-8.2.2.1-ae6821b7c64b-linux-2.6-amd64.deb
   
 
 
