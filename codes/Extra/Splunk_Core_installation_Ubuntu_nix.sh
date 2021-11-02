@@ -12,20 +12,15 @@ echo "${green}Splunk Core Install with DS included Automation${reset}"
 echo "${green}Splunk Inc. 2021${reset}"
 echo "${green}Splunk Autobahn Delivery Engineering Team${reset}"
 
-# CentOS/RedHat installation Script - Splunk Core
-sudo wget -O splunk-8.2.2.1-ae6821b7c64b-linux-2.6-x86_64.rpm 'https://download.splunk.com/products/splunk/releases/8.2.2.1/linux/splunk-8.2.2.1-ae6821b7c64b-linux-2.6-x86_64.rpm'
-sudo mv splunk-8.2.2.1-ae6821b7c64b-linux-2.6-x86_64.rpm /opt/
-cd /opt/
-sudo rpm -i splunk-8.2.2.1-ae6821b7c64b-linux-2.6-x86_64.rpm
 
 
  #Ubuntu installation Script - Splunk Core
-: '
+
 sudo wget -O splunk-8.2.2.1-ae6821b7c64b-linux-2.6-amd64.deb 'https://download.splunk.com/products/splunk/releases/8.2.2.1/linux/splunk-8.2.2.1-ae6821b7c64b-linux-2.6-amd64.deb'
 sudo mv splunk-8.2.2.1-ae6821b7c64b-linux-2.6-amd64.deb /opt/
 cd /opt/
 dpkg -i splunk-8.2.2.1-ae6821b7c64b-linux-2.6-amd64.deb
-   '
+  
 
 
 sudo /opt/splunk/bin/splunk start --accept-license
@@ -38,22 +33,8 @@ echo "${yellow}Checks if git is installed${reset}"
 echo ""
 
 
-#git install on centOS
-#comment down below if your machine is running ubuntu linux
-sudo yum install git -y > ~/output.txt
-bk=`cat ~/output.txt |grep -i "already installed" |grep -o "Git is already installed"`
- if [ "$bk" == "already installed" ]
-                then
-                           echo "${green}The git package is $bk ${reset}"
 
-                           echo ""
-
-                           echo "${green}We are ok to clone the file using git${reset}"
-
-                           fi
-
- #Uncomment down below if your machine is running ubuntu linux
-: ' git install on Ubuntu
+ #git install on Ubuntu
 sudo  apt install git-all -y > ~/output.txt
 bk=`cat ~/output.txt |grep -i "already installed" |grep -o "Git is already installed"`
  if [ "$bk" == "already installed" ]
@@ -62,7 +43,7 @@ bk=`cat ~/output.txt |grep -i "already installed" |grep -o "Git is already insta
                            echo ""
                            echo "We are ok to clone the file using git"
                            fi
-   '
+   
    
   #core apps/ta installation
   #this section varies one client to another one depending on what we want to install on thier HF
